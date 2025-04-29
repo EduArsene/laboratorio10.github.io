@@ -1,126 +1,168 @@
-html{
-    box-sizing: border-box;
-    height: 100%;
-}
-*,
-*::before,
-*::after{
-    box-sizing: inherit;
+* {
     margin: 0;
     padding: 0;
-}
-body{
-    margin: 0;
-    position: absolute;
-    height: 100%;
-    width: 100%;  
-   background: linear-gradient(320deg,#d8d6d3,#573807);
-}
-.contenedor{
-    height: 100%;
-}
-.cajaLogin{
-    position: absolute;
-    width: 432px;
-    height: 637px;
-    left: 66px;
-    top: 14px;
-    background: #d8c3a2;
-    border-radius: 19px;
-}
-.contenido{
-    width: 100%;
-    height: 100%;
-}
-.barrasuperior{
-    background: #FFC355;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    position: initial;
-    width: 397px;
-    height: 34px;
-}
-.NombreTienda{
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 21px;
-    line-height: 25px;
-    color: #000000;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-left: 10px;
-    position: absolute;
-    width: 141px;
-    height: 72px;
-    left: 58px;
-    top: 109px;
-}
-.logo{
-    position: absolute;
-    width: 126px;
-    height: 137px;
-    left: 237px;
-    top: 36px;
-    border-radius: 43px;
-}
-.inputs{
-    display: flex;
-    flex-direction: column;
-    max-width: 250px;
-}
-input#username {
-    background: #D9D9D9;
-    opacity: 0.52;
-    border: 1px solid rgba(0, 0, 0, 0.48);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 15px;
     box-sizing: border-box;
-    position: absolute;
-    width: 239px;
-    height: 64px;
-    left: 86;
-    top: 298px;
+    font-family: 'Poppins', sans-serif;
 }
-input#pass {
-    background: #D9D9D9;
-    opacity: 0.52;
-    border: 1px solid rgba(0, 0, 0, 0.48);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 15px;
-    box-sizing: border-box;
-    position: absolute;
-    width: 239px;
-    height: 60px;
-    left: 86px;
-    top: 408px;
-}
-.btnLogin {
-    background: #E6BC71;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 15px;
+
+body {
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
-    position: absolute;
-    width: 195px;
-    height: 45px;
-    left: 113px;
-    top: 525px;
+    background: linear-gradient(135deg, #9b9894, #74716c);
+    position: relative;
 }
-a {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 22px;
-    text-decoration-line: underline;
-    color: #880808;
+
+/* Fondo con detalles */
+.background {
     position: absolute;
-    width: 328px;
-    height: 72px;
-    left: 252px;
-    top: 617px;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 20% 20%, #ca6200 10%, transparent 30%),
+        radial-gradient(circle at 80% 80%, #cc8e37 10%, transparent 30%);
+    background-size: cover;
+    opacity: 0.15;
+    z-index: 0;
+}
+
+/* Contenedor del login */
+.login-container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+}
+
+/* Formulario */
+.login-form {
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+/* Barra superior decorativa */
+.barra-superior {
+    width: 60px;
+    height: 6px;
+    background: #ff7b00;
+    border-radius: 10px;
+    margin: 0 auto 20px auto;
+}
+
+/* Nombre de la tienda */
+.nombre-tienda {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ff7b00;
+    margin-bottom: 20px;
+}
+
+/* Logo */
+.logo img {
+    width: 80px;
+    margin-bottom: 20px;
+}
+
+/* Inputs */
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.inputs input {
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.inputs input:focus {
+    border-color: #ff7b00;
+    box-shadow: 0 0 5px #ff7b00;
+}
+
+/* Botones */
+.botones {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.botones button {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #ff7b00, #fabe6b);
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn {
+    outline: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #40B3A2;
+    min-width: 200px;
+    border: 0;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .1);
+    box-sizing: border-box;
+    padding: 16px 20px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.btn:hover {
+    opacity: .95;
+}
+
+.btn .animation {
+    border-radius: 100%;
+    animation: ripple 0.6s linear infinite;
+}
+
+@keyframes ripple {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1);
+    }
+
+    100% {
+        box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1), 0 0 0 80px rgba(255, 255, 255, 0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .login-form {
+        padding: 30px 20px;
+    }
+
+    .nombre-tienda {
+        font-size: 24px;
+    }
+
+    .logo img {
+        width: 60px;
+    }
 }
